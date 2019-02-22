@@ -62,7 +62,21 @@ submitButton.addEventListener('click', updateCoffees);
 var coffeeSearch = document.getElementById("coffeeSearch");
 
 var searchQuery = function(e){
+    var html = "";
+    for (var i = 0; i < coffees.length; i++ ){
+
+        if (coffees[i].name.includes(coffeeSearch.value)){
+           html = html + renderCoffee(coffees[i]);
+
+
+        }
+        tbody.innerHTML = html;
+
+    }
 
 };
 
-coffeeSearch.addEventListener()
+
+
+
+coffeeSearch.addEventListener("keyup",searchQuery);
